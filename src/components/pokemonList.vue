@@ -4,10 +4,9 @@
     <p v-if="store.isLoading">Carregando Pokémon...</p>
     <p v-if="store.error" style="color: red">Erro: {{ store.error }}</p>
 
-    <ul>
-      v-if="!store.isLoading && !store.error">
+    <ul v-if="!store.isLoading && !store.error">
       <li v-for="pokemon in store.pokemonList" :key="pokemon.id">
-        <img src="pokemon.sprites.front_default" alt="pokemon.name" width="50" height="50" />
+        <img :src="pokemon.sprites?.front_default" :alt="pokemon.name" width="50" height="50" />
         {{ pokemon.name }} (ID: {{ pokemon.id }})
       </li>
     </ul>

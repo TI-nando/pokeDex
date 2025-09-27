@@ -26,16 +26,16 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-import { userPokemonDetailStore } from '@/stores/pokemonDetailStore'
+import { ref } from 'vue'
+import { userPokemonStore } from '@/stores/pokemonStore'
 
-const store = userPokemonDetailStore()
+const store = userPokemonStore()
 const searchQuery = ref('')
 const searched = ref(false)
 
 const searchPokemon = () => {
   if (searchQuery.value.trim()) {
-    store.fetchPokemonByName(seatchQuery.value.trim())
+    store.fetchPokemonByName(searchQuery.value.trim())
     searched.value = true
   }
 }
