@@ -6,7 +6,7 @@ defineProps({
 
 <template>
   <li class="pokemon-card">
-    <img :src="pokemon.sprites.font_default" :alt="pokemon.name" class="pokemon-image" />
+    <img :src="pokemon.sprites.front_default" :alt="pokemon.name" class="pokemon-image" />
     <h2 class="pokemon-name">#{{ pokemon.id }} - {{ pokemon.name }}</h2>
     <div class="pokemon-types">
       <span v-for="typeInfo in pokemon.types" :key="typeInfo.type.name" class="type-badge">

@@ -27,9 +27,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { userPokemonStore } from '@/stores/pokemonStore'
+import { usePokemonStore } from '@/stores/pokemonStore'
 
-const store = userPokemonStore()
+const store = usePokemonStore()
 const searchQuery = ref('')
 const searched = ref(false)
 
