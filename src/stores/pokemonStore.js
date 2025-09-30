@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export const userPokemonStore = defineStore('pokemon', () => {
+export const usePokemonStore = defineStore('pokemon', () => {
   const pokemonList = ref([])
   const currentPokemon = ref(null)
   const isLoading = ref(false)
