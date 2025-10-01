@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-detail-container">
-    <spinner v-if="isLoading" />
+    <Spinner v-if="isLoading" />
 
     <div v-else-if="error" class="error-message">
       <h2>Oops!</h2>
@@ -32,7 +32,7 @@ import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePokemonStore } from '@/stores/pokemonStore'
 import { storeToRefs } from 'pinia'
-import spinner from '@/components/spinner.vue'
+import Spinner from '@/components/Spinner.vue'
 
 const route = useRoute()
 const pokemonStore = usePokemonStore()
@@ -40,9 +40,11 @@ const { currentPokemon, isLoading, error } = storeToRefs(pokemonStore)
 const fetchData = (pokemonName) => {
   pokemonStore.fetchPokemonByName(pokemonName)
 }
+
 onMounted(() => {
   fetchData(route.params.name)
 })
+
 watch(
   () => route.params.name,
   (newName) => {

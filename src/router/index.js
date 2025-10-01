@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import pokemonList from '@/components/pokemonList.vue'
-import pokemonDetail from '@/components/pokemonDetail.vue'
+import HomeView from '@/views/HomeView.vue'
+import PokemonDetail from '@/components/PokemonDetail.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: pokemonList,
+    component: HomeView,
   },
   {
     path: '/pokemon/:id',
     name: 'pokemon-detail',
-    component: pokemonDetail,
+    component: PokemonDetail,
     props: true,
   },
 ]

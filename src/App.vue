@@ -1,21 +1,21 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import searchBar from './components/searchBar.vue'
+import SearchBar from './components/SearchBar.vue'
 </script>
 
 <template>
   <header class="main-header">
-    <img src="" alt="logo" class="logo" />
+    <!-- <img src="" alt="logo" class="logo" /> -->
     <h1>Pokédex com Vue.js</h1>
   </header>
 
   <main class="container">
-    <searchBar />
+    <SearchBar />
     <RouterView />
   </main>
 
   <footer class="main-footer">
-    <p>Criado em {{ new Date().getFullYear() }}</p>
+    <p>Criado por Fernando em {{ new Date().getFullYear() }}</p>
   </footer>
 </template>
 
@@ -29,9 +29,6 @@ import searchBar from './components/searchBar.vue'
   align-items: center;
   justify-content: center;
   gap: 1rem;
-}
-.logo {
-  height: 40px;
 }
 .container {
   max-width: 1200px;
