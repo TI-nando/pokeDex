@@ -1,14 +1,16 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import searchBar from './components/searchBar.vue'
 </script>
 
 <template>
   <header class="main-header">
-    <img src="@/assets/logo.svg" alt="Vue Logo" class="logo">
+    <img src="" alt="logo" class="logo" />
     <h1>Pokédex com Vue.js</h1>
   </header>
 
   <main class="container">
+    <searchBar />
     <RouterView />
   </main>
 
