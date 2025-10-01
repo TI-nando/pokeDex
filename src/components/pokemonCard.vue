@@ -5,18 +5,24 @@ defineProps({
 </script>
 
 <template>
-  <li class="pokemon-card">
-    <img :src="pokemon.sprites.front_default" :alt="pokemon.name" class="pokemon-image" />
-    <h2 class="pokemon-name">#{{ pokemon.id }} - {{ pokemon.name }}</h2>
-    <div class="pokemon-types">
-      <span v-for="typeInfo in pokemon.types" :key="typeInfo.type.name" class="type-badge">
-        {{ typeInfo.type.name }}
-      </span>
-    </div>
-  </li>
+  <router-link :to="`/pokemon/${pokemon.name}`" class="card-link">
+    <li class="pokemon-card">
+      <img :src="pokemon.sprites.front_default" :alt="pokemon.name" class="pokemon-image" />
+      <h2 class="pokemon-name">#{{ pokemon.id }} - {{ pokemon.name }}</h2>
+      <div class="pokemon-types">
+        <span v-for="typeInfo in pokemon.types" :key="typeInfo.type.name" class="type-badge">
+          {{ typeInfo.type.name }}
+        </span>
+      </div>
+    </li>
+  </router-link>
 </template>
 
 <style scoped>
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
 .pokemon-card {
   display: flex;
   flex-direction: column;
@@ -32,7 +38,7 @@ defineProps({
 
 .pokemon-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .pokemon-image {
