@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <router-link :to="`/pokemon/${pokemon.name}`" class="card-link">
+  <router-link :to="`/pokemon/${pokemon.id}`" class="card-link">
     <li class="pokemon-card">
       <img :src="pokemon.sprites.front_default" :alt="pokemon.name" class="pokemon-image" />
       <h2 class="pokemon-name">#{{ pokemon.id }} - {{ pokemon.name }}</h2>

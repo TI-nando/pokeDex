@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import pokemonList from '@/components/pokemonList.vue';
-import pokemonDetail from '@/components/searchBar.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import pokemonList from '@/components/pokemonList.vue'
+import pokemonDetail from '@/components/pokemonDetail.vue'
 
 const routes = [
   {
@@ -9,16 +9,16 @@ const routes = [
     component: pokemonList,
   },
   {
-    path: '/pokemon/:name',
+    path: '/pokemon/:id',
     name: 'pokemon-detail',
     component: pokemonDetail,
     props: true,
-  }
-];
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-});
+  routes,
+})
 
-export default router;
+export default router

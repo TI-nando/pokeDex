@@ -10,14 +10,13 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const searchQuery = ref('')
-const router = useRouter() // Pega a instância do router
+const router = useRouter()
 
 const searchPokemon = () => {
   const query = searchQuery.value.trim()
   if (query) {
-    // Navega para a página de detalhes do pokémon pesquisado
     router.push(`/pokemon/${query.toLowerCase()}`)
-    searchQuery.value = '' // Limpa o campo de busca após a pesquisa
+    searchQuery.value = ''
   }
 }
 </script>
