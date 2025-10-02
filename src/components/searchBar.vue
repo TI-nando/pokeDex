@@ -30,16 +30,17 @@ const searchPokemon = () => {
 }
 .search-bar input {
   padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid var(--retro-blue);
+  border-radius: 6px;
   font-size: 1rem;
 }
 .search-bar button {
   padding: 0.5rem 1rem;
-  border: none;
-  background-color: #3498db;
-  color: white;
-  border-radius: 5px;
+  border: 2px solid var(--retro-blue);
+  background-color: var(--retro-yellow);
+  color: #000;
+  border-radius: 6px;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
 }
 </style>

@@ -8,7 +8,7 @@ defineProps({
   <router-link :to="`/pokemon/${pokemon.id}`" class="card-link">
     <li class="pokemon-card">
       <img :src="pokemon.sprites.front_default" :alt="pokemon.name" class="pokemon-image" />
-      <h2 class="pokemon-name">#{{ pokemon.id }} - {{ pokemon.name }}</h2>
+      <h2 class="pokemon-name">#{{ pokemon.id }} {{ pokemon.name }}</h2>
       <div class="pokemon-types">
         <span
           v-for="typeInfo in pokemon.types"
@@ -32,17 +32,20 @@ defineProps({
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: #f2f2f2;
   border-radius: 10px;
-  border: 1px solid #ddd;
-  transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
+  color: #000;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  /* Borda com gradiente suave e fundo claro */
+  border: 2px solid transparent;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%),
+    linear-gradient(90deg, var(--retro-blue), var(--retro-yellow));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .pokemon-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(59, 76, 202, 0.2);
 }
 
 .pokemon-image {
@@ -52,24 +55,33 @@ defineProps({
 }
 
 .pokemon-name {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
   text-transform: capitalize;
-  margin: 0.5rem 0;
+  margin-top: 0.75rem;
+  text-align: center;
+  color: #000;
+  /* etiqueta com gradiente suave para destacar o nome */
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(59, 76, 202, 0.12), rgba(253, 216, 53, 0.12));
+  display: inline-block;
 }
 
 .pokemon-types {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .type-badge {
   padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  background-color: #a8a878;
-  color: white;
+  border-radius: 6px;
+  background-color: #e9ecef;
+  color: #222;
   font-size: 0.75rem;
   text-transform: capitalize;
+  border: 1px solid #d0d7de;
 }
 
 /* Adicione cores para cada tipo */

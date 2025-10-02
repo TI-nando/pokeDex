@@ -20,12 +20,17 @@ defineProps({
 </script>
 
 <style scoped>
+h1 {
+  color: #000;
+}
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   list-style: none;
   padding: 0;
+  border-top: 2px dashed var(--retro-blue);
+  padding-top: 1rem;
 }
 
 .pokemon-card-skeleton {

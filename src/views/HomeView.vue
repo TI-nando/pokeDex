@@ -28,7 +28,8 @@ onMounted(() => {
 <style scoped>
 .error-message {
   text-align: center;
-  color: red;
+  color: var(--retro-red);
   margin-top: 2rem;
+  font-family: 'Press Start 2P', cursive;
 }
 </style>

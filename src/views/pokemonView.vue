@@ -8,7 +8,7 @@
     </div>
 
     <article v-else-if="currentPokemon" class="pokemon-detail-card">
-      <h1 class="pokemon-name">#{{ currentPokemon.id }} - {{ currentPokemon.name }}</h1>
+      <h1 class="pokemon-name">#{{ currentPokemon.id }} {{ currentPokemon.name }}</h1>
 
       <img
         :src="currentPokemon.sprites.other['official-artwork'].front_default"
@@ -60,16 +60,20 @@ watch(
   padding: 1rem;
 }
 .pokemon-detail-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding: 2rem;
+  border: 2px solid var(--retro-blue);
+  color: #000;
 }
 .pokemon-name {
   text-transform: capitalize;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
+  font-family: 'Press Start 2P', cursive;
+  color: #000;
 }
 .pokemon-image {
   width: 100%;
@@ -85,17 +89,21 @@ watch(
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #efefef;
 }
 .stat-name {
   text-transform: capitalize;
   font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #000;
 }
 .error-message {
   text-align: center;
   padding: 2rem;
   background-color: #fde1df;
   border-radius: 10px;
+  border: 2px dashed var(--retro-red);
 }
 .error-message h2 {
   color: #c53030;
