@@ -44,8 +44,10 @@ import SearchBar from './components/SearchBar.vue'
 }
 
 .main-header h1 {
-  color: #FFD12A;
-  text-shadow: 0 2px 0 #2a2a2a, 0 0 8px rgba(0, 0, 0, 0.15);
+  color: #ffd12a;
+  text-shadow:
+    0 2px 0 #2a2a2a,
+    0 0 8px rgba(0, 0, 0, 0.15);
   margin: 0;
 }
 
